@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #D7C0AE;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: #967E76;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 35px;
+            font-size: 30px;
+            font-weight: 750;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav ul li a:hover {
+            color: #773017;
+        }
+
+        .left {
+            font-size: 40px;
+            color: black;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .onesection {
+          
+            display: flex;
+            justify-content: space-around;
+            margin: 24px 0;
+        }
+
+        .leftsection {
+           
+            height: 600px;
+            width: 800px;
+            color: #825141;
+            font-size: 120px;
+            font-weight: 300;
+            padding-top: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .leftsection .btn {
+            padding: 12px;
+           background-color: #D7C0AE;
+            font-size: 50px;
+            color: #825141;
+            cursor: pointer;
+        }
+
+        .rightsection img {
+            background-size: cover;
+            width: 100%;
+            max-width: 850px;
+            max-height: 850px;
+            padding-top: 120px;
+            padding-right: 100px;
+            border-radius: 40%;
+          
+        }
+
+        .leftsection h6 {
+            padding-top: 30px;
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            font-weight: 200;
+        }
+       
+    
+
+    .slide {
+        display: none;
+    }
+
+    .slide.active {
+        display: block;
+        animation: fadeInOut 3s linear infinite;
+    }
+
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+
+
+       
+        @media (max-width: 768px) {
+            .leftsection {
+                font-size: 200px;
+            }
+
+            .leftsection .btn {
+                font-size: 100px;
+            }
+
+            .rightsection img {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">FLEXI-LEARN</div>
+            <div class="right">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Categories</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Settings</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="onesection">
+            <div class="leftsection">
+                Unleash Your <br> Potential.
+                <h6 class="heading1">"Empowering Minds, Igniting Change:<br> A Skill Exchange Platform where Curiosity,<br> Meets Expertise, Creating a Community of<br> Lifelong Learners."</h6>
+                <div class="buttons">
+                    <button class="btn">Explore</button>
+                    <button class="btn">What do you wanna learn?</button>
+                </div>
+            </div>
+            <div class="rightsection">
+                
+                <div class="slideshow-container">
+                    <img src="bg.png.png" class="slide active" width="400px" height="800px">
+                    <img src="bg2.png.jpg" class="slide" width="400px" height="800px">
+                    <img src="bg3.png.jpg" class="slide" width="400px" height="800px">
+                    <img src="bg4.png" class="slide" width="400px" height="800px">
+                    <img src="bg5.png" class="slide" width="400px" height="800px">
+                    <img src="bg6.png" class="slide" width="400px" height="800px">
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <script>
+       
+    
+    const slides = document.querySelectorAll(".slide");
+    let currentSlideIndex = 0;
+
+    function showSlide() {
+        slides[currentSlideIndex].classList.remove("active");
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        slides[currentSlideIndex].classList.add("active");
+    }
+
+    setInterval(showSlide, 3000); 
+
+    </script>
+</body>
+</html>
